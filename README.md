@@ -1,6 +1,6 @@
 ## Simple OpenLDAP container.
 
-This container installs a simple non-replicated OpenLDAP server. All data is stored on the `/data/` volume.
+This container installs a simple non-replicated OpenLDAP server. All data is stored on the `/data/` volume. By default ACLs are created that allow modification of entries through LDAPI, with userPassword field being protected.
 
 ## Running
 The container is build by Quay.io at `quay.io/tmm/openldap`.

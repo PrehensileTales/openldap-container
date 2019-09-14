@@ -68,6 +68,8 @@ olcRootDN: cn=Manager,${suffix}
 olcDbDirectory:	/data/databases/${suffix}
 olcDbIndex: objectClass eq,pres
 olcDbIndex: ou,cn,mail,surname,givenname eq,pres,sub
+olcAccess: {0}to attrs=userPassword by self write by anonymous auth by dn.base=gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth write by * none
+olcAccess: {1}to * by dn.base=gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth write by * read
 "; done)
 EOF
 
