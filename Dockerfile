@@ -14,10 +14,10 @@ RUN dnf -y install openldap-servers openldap-clients pwgen && \
 COPY startslapd.sh /usr/local/sbin
 RUN chmod +x /usr/local/sbin/startslapd.sh
 
-ENV INITIAL_SCHEMAS=core cosine inetorgperson
-ENV INITIAL_SUFFIX_DN_1=dc=example,dc=com
-ENV INITIAL_ORGANIZATION_1=Example organization
-ENV INITIAL_ROOTPW=""
+ENV INITIAL_SCHEMAS core cosine inetorgperson
+ENV INITIAL_SUFFIX_DN_1 dc=example,dc=com
+ENV INITIAL_ORGANIZATION_1 Example organization
+ENV INITIAL_ROOTPW ""
 
 ENV SLAPD_LISTEN_LDAPS=1
 ENV SLAPD_LISTEN_LDAP=1
