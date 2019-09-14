@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-set -x
 
 if [ ! -e /data/conf.d ]; then
 if [ -z "${INITIAL_ROOTPW}" ]; then
@@ -85,6 +84,9 @@ EOF
   echo "NOTE: cn=manager,cn=config password is ${rootpw}"
   echo "NOTE: this message will not be repeated!"
 fi
+
+unset INITIAL_ROOTPW
+unset rootpw
 
 urls=""
 if [ ${SLAPD_LISTEN_LDAP} -eq 1 ]; then urls="$urls ldap://"; fi
