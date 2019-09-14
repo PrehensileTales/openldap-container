@@ -6,17 +6,11 @@ This container installs a simple non-replicated OpenLDAP server. All data is sto
 The container is build by Quay.io at `quay.io/tmm/openldap`.
 
 The following environment variables affect the runtime behavior of the container:
-`SLAPD_LISTEN_LDAPS`
-Listen to LDAPS (port 636) defaults to `1`
 
-`SLAPD_LISTEN_LDAP`
-Listen to LDAP (port 389) defaults to `1`
-
-`SLAPD_LISTEN_LDAPI`
-Listen to LDAPI (/data/ldapi) defaults to `1`
-
-`SLAPD_LOGLEVEL`
-Set the SLAPD loglevel. Defaults to `2`
+* `SLAPD_LISTEN_LDAPS` Listen to LDAPS (port 636) defaults to `1`
+* `SLAPD_LISTEN_LDAP` Listen to LDAP (port 389) defaults to `1`
+* `SLAPD_LISTEN_LDAPI` Listen to LDAPI (/data/ldapi) defaults to `1`
+* `SLAPD_LOGLEVEL` Set the SLAPD loglevel. Defaults to `2`
 
 ## Configuration
 The following environment variables affect the initial configuration:
@@ -37,8 +31,11 @@ Set the initial schemas to be loaded into the directory. These are the schemas s
 * pmi
 * ppolicy
 
+By default the container loads `core cosine inetorgperson`
+
 `INITIAL_SUFFIX_DN_`<string>
 `INITIAL_ORGANIZATION_`<string>
+
 Allows the creation of initial suffixes when the container is first started. By default:
 ```
 INITIAL_SUFFIX_DN_1="dc=example,dc=com"
