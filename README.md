@@ -8,10 +8,13 @@ The container is build by Quay.io at `quay.io/tmm/openldap`.
 The following environment variables affect the runtime behavior of the container:
 `SLAPD_LISTEN_LDAPS`
 Listen to LDAPS (port 636) defaults to `1`
+
 `SLAPD_LISTEN_LDAP`
 Listen to LDAP (port 389) defaults to `1`
+
 `SLAPD_LISTEN_LDAPI`
 Listen to LDAPI (/data/ldapi) defaults to `1`
+
 `SLAPD_LOGLEVEL`
 Set the SLAPD loglevel. Defaults to `2`
 
