@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+if [ "${STARTUP_DEBUG}" -eq "1" ]; then
+  set -x 
+fi
+
 if [ ! -e /data/conf.d ]; then
 if [ -z "${INITIAL_ROOTPW}" ]; then
   rootpw=$(pwgen 10)
