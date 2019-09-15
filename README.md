@@ -36,7 +36,7 @@ Set the initial schemas to be loaded into the directory. These are the schemas s
 * pmi
 * ppolicy
 
-By default the container loads `core cosine inetorgperson`
+By default the container loads `core cosine inetorgperson`. The `core` schema is always loaded regardless of user settings. When the `ppolicy` overlay is requested this schema will also be loaded automatically.
 
 ### Default databases
 The container can make one or more databases based on environment variables:

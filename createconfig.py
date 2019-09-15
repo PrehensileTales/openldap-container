@@ -66,11 +66,18 @@ cn: schema
 
 """
 
+schemas = []
 if 'INITIAL_SCHEMAS' in os.environ:
-  for schema in os.environ['INITIAL_SCHEMAS'].split(" "):
-     config_ldif += f"include: file:///etc/openldap/schema/{schema}.ldif\n"
-  if not 'ppolicy' in os.environ['INITIAL_SCHEMAS'].split(" ") and use_ppolicy:
-     config_ldif += f"include: file:///etc/openldap/schema/ppolicy.ldif\n"
+  schemas = os.environ['INITIAL_SCHEMAS'].split(" "):
+
+if not 'core' in schemas:
+  schemas.append('core')
+
+if not 'ppolicy' in schemas and use_ppolicy:
+  schemas.append('ppolicy')
+
+for schema in schemas:
+  config_ldif += f"include: file:///etc/openldap/schema/{schema}.ldif\n"
 
 config_ldif += f"""
 dn: olcDatabase=config,cn=config
