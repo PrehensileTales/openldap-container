@@ -68,7 +68,7 @@ cn: schema
 
 schemas = []
 if 'INITIAL_SCHEMAS' in os.environ:
-  schemas = os.environ['INITIAL_SCHEMAS'].split(" "):
+  schemas = os.environ['INITIAL_SCHEMAS'].split(" ")
 
 if not 'core' in schemas:
   schemas.append('core')
