@@ -193,9 +193,9 @@ pwdMinLength: 8
 pwdMustChange: FALSE
 pwdSafeModify: FALSE
 """
-  if 'USE_PPOLICY_USE_PWCHECK' in suffix and suffix['USE_PPOLICY_USE_PWCHECK'] == '1':
-    suffix_ldif += "objectClass: pwdPolicyChecker\n"
-    suffix_ldif += "pwdCheckModule: check_password.so\n"
+    if 'USE_PPOLICY_USE_PWCHECK' in suffix and suffix['USE_PPOLICY_USE_PWCHECK'] == '1':
+      suffix_ldif += "objectClass: pwdPolicyChecker\n"
+      suffix_ldif += "pwdCheckModule: check_password.so\n"
 
   print(f"Loading {suffix['dn']} ldif")
   print(suffix_ldif)
