@@ -1,4 +1,4 @@
-FROM fedora:30
+FROM fedora:31
 
 LABEL maintainer="Hein-Pieter van Braam-Stewart <hp@prehensile-tales.com>"
 
