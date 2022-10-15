@@ -6,9 +6,9 @@ if [ ! -e /data/conf.d ]; then
   mkdir -p /data/databases
   python3 /usr/local/sbin/createconfig.py
 
-  chown -R ldap.ldap /data
 fi
 
+chown -R ldap.ldap /data
 unset INITIAL_ROOTPW
 
 echo "
